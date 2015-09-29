@@ -1,0 +1,19 @@
+<ion-view view-title="Settings">
+    <ion-content ng-class="{expanded:isExpanded}" padding="true">
+        <ion-list class="toggle-list-items">
+            <ion-item>
+                <ion-toggle toggle-class="toggle-calm" ng-model="notificationStatus.checked" ng-change="notificationChange()">Turn <span ng-bind="notificationStatus.status"></span> notifications</ion-toggle>
+            </ion-item>
+            <ion-item class="no-border" ng-show="!irPaid.status">
+                <a class="button button-positive icon ion-android-playstore store" ng-click="buyFromPlayStore()"> Buy From Google Play</a>
+                <a class="button button-assertive icon ion-android-cart" ng-click="buyWithAirtime()" style="display: none !important;"> Buy With Airtime</a>
+                <div class="terms">
+                    <p><a onclick="open_my_uri('http://emnityweblab.com/blog/android/filtersms')">Terms &amp; Conditions Apply</a></p>
+                </div>
+            </ion-item>
+            <ion-item class="no-border" ng-show="irPaid.status">
+                <p class="paid">Congrats! you have paid for this app.</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

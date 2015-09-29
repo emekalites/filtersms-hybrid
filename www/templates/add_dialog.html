@@ -1,0 +1,9 @@
+<div class="modal">
+    <ion-content scroll="false">
+        <ion-list class="modal-fabs">
+            <ion-item><a ui-sref="main.inbox" ng-show="irPaid.status" class="button button-small button-fab button-balanced icon ion-android-mail light"></a></ion-item>
+            <ion-item><a ui-sref="main.phoneBook" ng-show="irPaid.status" class="button button-small button-fab button-assertive icon ion-android-person light"></a></ion-item>
+            <ion-item><button ng-click="showPopup()" class="button button-fab button-positive icon ion-android-create light"></button></ion-item>
+        </ion-list>
+    </ion-content>
+</div>

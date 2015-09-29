@@ -1,0 +1,18 @@
+<ion-view view-title="FilterSMS">
+    <ion-nav-buttons side="right">
+        <button ng-click="data.showDelete = !data.showDelete" class="button button-clear"><i class="ion-android-delete"></i></button>
+    </ion-nav-buttons>
+    <ion-header-bar class="bar-subheader bar-dark">
+        <h2><i class="icon ion-ios-information"></i> Add Phone numbers to block SMS</h2>
+    </ion-header-bar>
+    <ion-content padding="true" has-bouncing="true" ng-class="{expanded:isExpanded}" class="my-list-items">
+        <ion-refresher pulling-icon="ion-loading-c" on-refresh="doRefresh()"></ion-refresher>
+        <button ng-click="deleteAllItems()" ng-show="data.showDelete" class="button button-block button-assertive">Delete All</button>
+        <ion-list show-delete="data.showDelete">
+            <ion-item ng-repeat="contact in contacts">
+                <div><ion-delete-button class="ion-android-delete" ng-click="deleteItem({{contact.id}})"></ion-delete-button> <i class="icon ion-ios-telephone"></i> {{contact.number}}</div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    <button ng-click="showSelectList()" id="fab-activity" ng-show="iPaid.status" class="button button-fab button-fab-bottom-right expanded button-calm"><i class="icon ion-plus"></i></button>
+</ion-view>

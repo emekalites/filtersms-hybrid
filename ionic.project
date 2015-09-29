@@ -1,0 +1,10 @@
+{
+    "name": "FilterSMS",
+    "app_id": "",
+    "gulpStartupTasks": [
+        "sass",
+        "templatecache",
+        "useref",
+        "watch"
+    ]
+}

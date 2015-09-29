@@ -1,0 +1,16 @@
+<ion-view view-title="Inbox">
+    <ion-nav-buttons side="right">
+        <div class="selectedCount">{{selection.length}} Selected</div>
+        <button ng-click="addContacts()" class="button button-clear">Ok</button>
+        <!--<input class="check-all" type="checkbox" ng-click="checkAll()">-->
+    </ion-nav-buttons>
+    <ion-header-bar class="bar-subheader bar-dark">
+        <h2><i class="icon ion-ios-information"></i> Add Phone numbers to block SMS</h2>
+    </ion-header-bar>
+    <ion-content class="inbox" padding="true">
+        <ul class="list">
+            <li ng-repeat="cn in inboxContacts | limitTo:numberToDisplay" class="item checkbox-square item-checkbox"><label class="checkbox"><input type="checkbox" value="{{cn.number}}" name="cName[]" ng-checked="selection.indexOf(cn.number) > -1" ng-click="toggleSelection(cn.number)"></label> {{cn.number}}</li>
+        </ul>
+        <ion-infinite-scroll ng-if="!moreDataCanBeLoaded" on-infinite="loadMore()" icon="ion-loading-c" distance="5%"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>
